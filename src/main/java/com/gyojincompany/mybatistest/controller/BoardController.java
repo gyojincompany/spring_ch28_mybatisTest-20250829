@@ -107,6 +107,26 @@ public class BoardController {
 		return "contentModify";
 	}
 	
+	@RequestMapping(value = "/content_modifyOk")
+	public String content_modifyOk(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		String bname = request.getParameter("bname");
+		
+		IDao idao = sqlSession.getMapper(IDao.class);
+		int result = idao.boardModifyDao(bnum, btitle, bcontent, bname);
+		if (result == 0) { //수정 실패
+			return "redirect:content_modify?bnum="+bnum;
+		}
+		
+		BoardDto boardDto = idao.boardContentViewDao(bnum);
+		model.addAttribute("boardDto", boardDto);
+		
+		return "contentView";
+	}
+	
 	
 
 }

@@ -24,5 +24,9 @@
 	<select id="boardContentViewDao" resultType="com.gyojincompany.mybatistest.dto.BoardDto">
 		SELECT * FROM boardtbl WHERE bnum = #{param1}
 	</select>
+	
+	<update id="boardModifyDao">
+		UPDATE boardtbl SET btitle=#{param2}, bcontent=#{param3}, bname=#{param4} WHERE bnum=#{param1}
+	</update>
 
 </mapper>    

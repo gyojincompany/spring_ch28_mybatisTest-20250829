@@ -23,4 +23,7 @@ public interface IDao {
 	
 	//게시판 목록에서 유저가 클릭한 번호의 글 내용 가져오기 추상 메서드 선언
 	public BoardDto boardContentViewDao(String bnum);
+	
+	//게시판 글 수정 추상 메서드 선언
+	public int boardModifyDao(String bnum, String btitle, String bcontent, String bname);
 }

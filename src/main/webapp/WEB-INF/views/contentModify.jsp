@@ -10,10 +10,10 @@
 	<h2>글 내용</h2>
 	<hr>
 	<form action="content_modifyOk">
-	<input type="hidden" value="${boardDto.bnum }">	
-	글 제목 : <input type="text" value="${boardDto.btitle }"><br><br>
-	글 내용 : <input type="text" value="${boardDto.bcontent }"><br><br>
-	글 작성자 : <input type="text" value="${boardDto.bname }"><br><br>
+	<input type="hidden" name="bnum" value="${boardDto.bnum }">	
+	글 제목 : <input type="text" name="btitle" value="${boardDto.btitle }"><br><br>
+	글 내용 : <input type="text" name="bcontent" value="${boardDto.bcontent }"><br><br>
+	글 작성자 : <input type="text" name="bname" value="${boardDto.bname }"><br><br>
 	글 등록일 : ${boardDto.bdate }<br><br>	
 	<hr>
 	<input type="submit" value="수정완료">	
