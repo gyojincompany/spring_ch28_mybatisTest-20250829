@@ -20,5 +20,9 @@
 	<select id="boardCountDao" resultType="int">
 		SELECT COUNT(*) FROM boardtbl
 	</select>
+	
+	<select id="boardContentViewDao" resultType="com.gyojincompany.mybatistest.dto.BoardDto">
+		SELECT * FROM boardtbl WHERE bnum = #{param1}
+	</select>
 
 </mapper>    

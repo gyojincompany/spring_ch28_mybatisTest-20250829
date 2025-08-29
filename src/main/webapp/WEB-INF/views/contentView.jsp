@@ -15,5 +15,7 @@
 	글 등록일 : ${boardDto.bdate }
 	<hr>
 	<input type="button" value="글수정" onclick="javascript:window.location.href='content_modify?bnum=${boardDto.bnum}'">
+	<input type="button" value="글삭제" onclick="javascript:window.location.href='deleteOk?bnum=${boardDto.bnum}'">
+	<input type="button" value="글목록" onclick="javascript:window.location.href='boardlist'">
 </body>
 </html>

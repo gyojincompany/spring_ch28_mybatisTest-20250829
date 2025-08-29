@@ -84,9 +84,27 @@ public class BoardController {
 	@RequestMapping(value = "/content_view")
 	public String content_view(HttpServletRequest request, Model model) {
 		
+		String bnum = request.getParameter("bnum");
 		
+		IDao idao = sqlSession.getMapper(IDao.class);
+		BoardDto boardDto = idao.boardContentViewDao(bnum);
+		
+		model.addAttribute("boardDto", boardDto);
 		
 		return "contentView";
+	}
+	
+	@RequestMapping(value = "/content_modify")
+	public String content_modify(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");
+		
+		IDao idao = sqlSession.getMapper(IDao.class);
+		BoardDto boardDto = idao.boardContentViewDao(bnum);
+		
+		model.addAttribute("boardDto", boardDto);
+		
+		return "contentModify";
 	}
 	
 	
