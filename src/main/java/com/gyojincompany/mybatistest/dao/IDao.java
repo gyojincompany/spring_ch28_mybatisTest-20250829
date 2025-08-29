@@ -17,4 +17,7 @@ public interface IDao {
 	
 	//게시판 글 삭제 추상 메서드 선언
 	public int boardDeleteDao(String bnum);
+	
+	//게시판 모든 글 수 가져오기 추상 메서드 선언
+	public int boardCountDao();
 }

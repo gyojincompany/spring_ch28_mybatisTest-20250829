@@ -14,11 +14,15 @@ import com.gyojincompany.mybatistest.dao.IDao;
 import com.gyojincompany.mybatistest.dto.BoardDto;
 
 
+
 @Controller
 public class BoardController {
 	
 	@Autowired
 	private SqlSession sqlSession; //DI(의존성 자동 주입)
+	
+//	@Autowired
+//	private BoardService boardService;
 	
 	@RequestMapping(value = "/boardlist")
 	public String boardlist(HttpServletRequest request, Model model) {
@@ -26,8 +30,11 @@ public class BoardController {
 		IDao idao = sqlSession.getMapper(IDao.class);
 		List<BoardDto> boardDtos = idao.boardlistDao();		
 		//System.out.println(boardDtos.get(0).getBtitle());
+		int bCount  = idao.boardCountDao();
+		//int bCount = boardService.getBoardCount();
 		
 		model.addAttribute("boardDtos", boardDtos);
+		model.addAttribute("bCount", bCount);
 		
 		return "boardlist";
 	}
@@ -72,6 +79,14 @@ public class BoardController {
 		}
 		
 		return "redirect:boardlist";
+	}
+	
+	@RequestMapping(value = "/content_view")
+	public String content_view(HttpServletRequest request, Model model) {
+		
+		
+		
+		return "contentView";
 	}
 	
 	
