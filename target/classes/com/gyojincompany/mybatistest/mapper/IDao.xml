@@ -8,5 +8,13 @@
 	<select id="boardlistDao" resultType="com.gyojincompany.mybatistest.dto.BoardDto">
 		SELECT * FROM boardtbl ORDER BY bnum DESC
 	</select>
+	
+	<insert id="boardWriteDao">
+		INSERT INTO boardtbl(btitle, bcontent, bname, bhit) VALUES (#{param1}, #{param2}, #{param3}, 0)
+	</insert>
+	
+	<delete id="boardDeleteDao">
+		DELETE FROM boardtbl WHERE bnum = #{param1}
+	</delete>
 
 </mapper>    

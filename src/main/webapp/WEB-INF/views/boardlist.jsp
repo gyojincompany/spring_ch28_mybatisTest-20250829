@@ -14,5 +14,7 @@
 	<c:forEach items="${boardDtos }" var="boardDto">
 		${boardDto.bnum } / ${boardDto.btitle } / ${boardDto.bname } / ${boardDto.bhit } / ${boardDto.bdate } <br> 
 	</c:forEach>
+	<hr>
+	<input type="button" value="글쓰기" onclick="javascript:window.location.href='write_form'">
 </body>
 </html>
